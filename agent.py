@@ -15,13 +15,25 @@ from typing import Dict, Any, List
 from functools import wraps
 from dotenv import load_dotenv
 
-load_dotenv()
+# Load .env BEFORE anything that reads environment variables
+load_dotenv(override=True)
 
 from langgraph.graph import StateGraph, END
 from langchain_openai import ChatOpenAI
 
 # ── Model setup ────────────────────────────────────────────────
-llm = ChatOpenAI(model="gpt-4o-mini", temperature=0.2)
+api_key = os.getenv("OPENAI_API_KEY")
+if not api_key:
+    raise EnvironmentError(
+        "\n\n  OPENAI_API_KEY is not set.\n"
+        "  1. Copy .env.example → .env\n"
+        "  2. Add your key:  OPENAI_API_KEY=sk-...\n"
+        "  Or set it in your terminal:\n"
+        "     Windows PowerShell : $env:OPENAI_API_KEY='sk-...'\n"
+        "     macOS / Linux      : export OPENAI_API_KEY='sk-...'\n"
+    )
+
+llm = ChatOpenAI(model="gpt-4o-mini", temperature=0.2, api_key=api_key)
 
 def call_llm(system: str, user: str) -> str:
     resp = llm.invoke([
