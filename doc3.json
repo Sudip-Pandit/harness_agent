@@ -1,5 +1,0 @@
-{
-  "id": "doc3",
-  "title": "Prompt Engineering Best Practices",
-  "content": "Prompt engineering is the craft of giving language models precise structured instructions. Techniques include chain-of-thought prompting, role assignment, output schema enforcement, and few-shot examples. Each node in an agentic pipeline should have a single system prompt with a single responsibility. Prompts should be schema-explicit, stating the exact JSON structure expected in the response. Prompt engineering alone is insufficient for agentic systems that take actions across multiple steps."
-}
