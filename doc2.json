@@ -1,0 +1,5 @@
+{
+  "id": "doc2",
+  "title": "RAG and Context Engineering",
+  "content": "Context engineering is the systematic design of information surrounding a language model. It includes retrieval-augmented generation (RAG), memory systems, and context assembly logic. Vector similarity alone is not the same as relevance. Cross-encoder reranking after embedding search significantly improves retrieval quality. Chunks should be 300 to 500 tokens cut at semantic boundaries, not arbitrary character counts. Long sessions require progressive compression to avoid the lost-in-the-middle effect."
+}

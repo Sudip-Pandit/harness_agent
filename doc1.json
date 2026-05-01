@@ -1,0 +1,5 @@
+{
+  "id": "doc1",
+  "title": "Harness Engineering Introduction",
+  "content": "Harness engineering is the discipline of building the control infrastructure around AI agents. It includes execution loops with termination conditions, state stores, tool contracts, verification layers, and observability. Without a harness, agents loop indefinitely, lose state between turns, and misread errors as valid responses. The harness is everything that is not the model itself."
+}
